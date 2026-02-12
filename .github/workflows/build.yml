@@ -41,5 +41,14 @@ jobs:
           name: pytest-log
           path: pytest.log
 
+      - name: Create build zip
+        run: zip -r build.zip main.py utils.py tests/ -x "*__pycache__*"
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: build.zip
+
       - name: Run app
         run: python main.py
