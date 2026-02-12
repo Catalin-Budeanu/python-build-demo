@@ -25,14 +25,21 @@ jobs:
 
       - name: Run tests
         run: |
-          PYTHONPATH=. python -m pytest -v --junitxml=pytest.xml
+          PYTHONPATH=. python -m pytest -v --junitxml=pytest.xml | tee pytest.log
 
-      - name: Upload test report
+      - name: Upload test report (XML)
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: test-report
           path: pytest.xml
+
+      - name: Upload pytest log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-log
+          path: pytest.log
 
       - name: Run app
         run: python main.py

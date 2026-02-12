@@ -1,0 +1,9 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.3, pytest-9.0.2, pluggy-1.6.0 -- C:\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\user\Desktop\SkillBrain Python Simple App
+collecting ... collected 1 item
+
+tests/test_utils.py::test_calculate_total PASSED                         [100%]
+
+============================== 1 passed in 0.01s ==============================
