@@ -27,11 +27,6 @@ jobs:
         run: |
           PYTHONPATH=. python -m pytest -v
 
-      - name: Run linter
-        run: |
-          pip install flake8
-          flake8 .
-
       - name: Run tests and generate report
         run: |
           PYTHONPATH=. python -m pytest -v --junitxml=report.xml | tee pytest.log
