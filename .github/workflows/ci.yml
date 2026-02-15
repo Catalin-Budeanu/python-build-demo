@@ -33,10 +33,12 @@ jobs:
           flake8 .
 
       - name: Run tests and generate report
-        run: pytest --junitxml=report.xml
+        run: |
+          PYTHONPATH=. python -m pytest -v --junitxml=report.xml | tee pytest.log
 
       - name: Upload test report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: test-report
-          path: report.xml
+          path: report-ci.xml
