@@ -1,1 +1,1 @@
-![Build Status](https://github.com/<user>/<repo>/actions/workflows/ci.yml/badge.svg)
+![Build Status](https://github.com/Catalin-Budeanu/python-build-demo/actions/workflows/ci.yml/badge.svg)
